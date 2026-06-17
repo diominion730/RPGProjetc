@@ -74,4 +74,4 @@ while condicaoClasse:
     else:
       continue
 
-print(heroi.items())
+print(heroi.items()) #TESTE
