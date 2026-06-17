@@ -1,5 +1,27 @@
 heroi = {}
-classe = {"Classe1": "Guerreiro", "Classe2": "Mago", "Classe3": "Arqueiro"} #Adicionar um dicionario dentro de cada classe com seus respectivos atributos
+classe = {
+    "Classe1": {
+        'Nome:': 'Guerreiro', 
+        "Força": 18,
+        "Defesa": 16,
+        "Vida": 150,
+        "Mana": 30
+    },
+    "Classe2":{
+        'Nome': 'Mago',
+        "Força": 6,
+        "Defesa": 8,
+        "Vida": 80,
+        "Mana": 180
+        },
+    "Classe3":{
+        'Nome': 'Arqueiro',
+        "Nome": "Arqueiro",
+        "Força": 12,
+        "Defesa": 10,
+        "Vida": 100,
+        "Mana": 60
+          }} 
 
 #Criação de personagem
 #Nome do heroi
@@ -14,24 +36,40 @@ heroi['Peso'] = peso_heroi
 
 print("\n")
 
-print(
-"Selecione sua classe:"
-"1- Guerreiro"
-"2- Mago"
-"3- Arqueiro"
-)
-
-classeOp = str(input("Qual sera a classe do seu heroi"))
-if classeOp == 3:
-  print(f"Voce seleciounou a classe{classe['Classe3']}")
+condicaoClasse = True
+while condicaoClasse:
+  print(
+"Selecione sua classe:\n"
+"1- Guerreiro\n"
+"2- Mago\n"
+"3- Arqueiro\n"
+ )
   
-  confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
-  if confirmacao == "S" or "s" or "sim" or "Sim": #Precisa de outra logica ou algum metodo/função
-    heroi['Heroi'] = classe['Classe3']
-  #else
-    #Precisa mudar a lógica e fazer com que pergunte ate o usuario selecionar uma classe
+  classeOp = int(input("Qual sera a classe do seu heroi:"))
+    
+  if classeOp == 1:
+    print(f"Voce seleciounou a classe {classe['Classe1']}")
+    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
+    if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
+      heroi['Classe'] = classe['Classe1']
+      condicaoClasse = False
+    else:
+      continue
+    
+  if classeOp == 2:
+    print(f"Voce seleciounou a classe {classe['Classe2']}")
+    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas sem precisar tratar no "OR"
+    if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
+      heroi['Classe'] = classe['Classe2']
+      condicaoClasse = False
+    else:
+      continue
 
-print(heroi.items())
-
-#Poralgum motivo nao cai no If classeOp == 3
-
+  if classeOp == 3:
+    print(f"Voce seleciounou a classe {classe['Classe3']}")
+    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
+    if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
+      heroi['Classe'] = classe['Classe3']
+      condicaoClasse = False
+    else:
+      continue
