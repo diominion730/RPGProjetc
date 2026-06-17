@@ -73,3 +73,5 @@ while condicaoClasse:
       condicaoClasse = False
     else:
       continue
+
+    dasipufhdsuifdsfidsjiofoiasd
