@@ -48,7 +48,7 @@ while condicaoClasse:
   classeOp = int(input("Qual sera a classe do seu heroi:"))
     
   if classeOp == 1:
-    print(f"Voce seleciounou a classe {classe['Classe1']}")
+    print(f"Voce seleciounou a classe {classe['Classe1']: 'Nome'}") #ERRO
     confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
     if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
       heroi['Classe'] = classe['Classe1']
@@ -57,7 +57,7 @@ while condicaoClasse:
       continue
     
   if classeOp == 2:
-    print(f"Voce seleciounou a classe {classe['Classe2']}")
+    print(f"Voce seleciounou a classe {classe['Classe2']}") #LOGICA ERRADA
     confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas sem precisar tratar no "OR"
     if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
       heroi['Classe'] = classe['Classe2']
@@ -66,12 +66,12 @@ while condicaoClasse:
       continue
 
   if classeOp == 3:
-    print(f"Voce seleciounou a classe {classe['Classe3']}")
+    print(f"Voce seleciounou a classe {classe['Classe3']}") #LOGICA ERRADA
     confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
     if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
-      heroi['Classe'] = classe['Classe3']
+      heroi['Classe'] = classe['Classe3'] 
       condicaoClasse = False
     else:
       continue
 
-      
+print(heroi.items())
