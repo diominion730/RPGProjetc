@@ -1,7 +1,8 @@
-heroi = {}
+#Chaves e valores iniciais obrigatorios
+heroi = {'Nivel': 0, 'Xp': 0}
 classe = {
     "Classe1": {
-        'Nome:': 'Guerreiro', 
+        'Nome': 'Guerreiro', 
         "Força": 18,
         "Defesa": 16,
         "Vida": 150,
@@ -15,7 +16,6 @@ classe = {
         "Mana": 180
         },
     "Classe3":{
-        'Nome': 'Arqueiro',
         "Nome": "Arqueiro",
         "Força": 12,
         "Defesa": 10,
@@ -28,21 +28,14 @@ classe = {
 nome_heroi = str(input("Qual o nome do seu heroi?"))
 heroi['Nome'] = nome_heroi 
 
-altura_heroi = float(input("Qual a altura do seu heroi?"))
-heroi['Altura'] = altura_heroi
-
-peso_heroi = float(input("Qual o peso do seu heroi?"))
-heroi['Peso'] = peso_heroi
-
-print("\n")
-
 condicaoClasse = True
 while condicaoClasse:
     print(
 "Selecione sua classe:\n"
-"1- Guerreiro\n"
-"2- Mago\n"
-"3- Arqueiro\n"
+#Vinicius: Modifiquei colocando os nomes diretamente dos valores da lista
+f"1- {(classe['Classe1']['Nome'])} \n"
+f"2- {(classe['Classe2']['Nome'])} \n"
+f"3- {(classe['Classe3']['Nome'])} \n"
  )
     try:                                                           # eu achei mais importante colocar o try aqui, já que é int, caso o usuário coloque qualquer outra coisa, ia dar erro e o código parava
         classeOp = int(input("Qual será a classe do seu heroi:"))
