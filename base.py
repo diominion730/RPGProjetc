@@ -38,40 +38,58 @@ print("\n")
 
 condicaoClasse = True
 while condicaoClasse:
-  print(
+    print(
 "Selecione sua classe:\n"
 "1- Guerreiro\n"
 "2- Mago\n"
 "3- Arqueiro\n"
  )
-  
-  classeOp = int(input("Qual sera a classe do seu heroi:"))
-    
-  if classeOp == 1:
-    print(f"Voce seleciounou a classe {classe['Classe1']: 'Nome'}") #ERRO
-    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
-    if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
-      heroi['Classe'] = classe['Classe1']
-      condicaoClasse = False
-    else:
-      continue
-    
-  if classeOp == 2:
-    print(f"Voce seleciounou a classe {classe['Classe2']}") #LOGICA ERRADA
-    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas sem precisar tratar no "OR"
-    if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
-      heroi['Classe'] = classe['Classe2']
-      condicaoClasse = False
-    else:
-      continue
+    try:                                                           # eu achei mais importante colocar o try aqui, já que é int, caso o usuário coloque qualquer outra coisa, ia dar erro e o código parava
+        classeOp = int(input("Qual será a classe do seu heroi:"))
+    except ValueError:
+        print("Por favor, digite apenas os números das classes listadas :)")
+        print()
+        continue
+    if classeOp == 1:                                             
+        print(f"Voce seleciounou a classe {classe['Classe1']}") # aqui nem precisou do try
+        confirmacao = str.upper(input("Digite 'S' para sim ou 'N' para não\nDeseja confirmar?: "))  # nunca ia dar dar erro aqui porque tá aceitando absolutamente tudo, por isso o try seria inviável aqui
+        if confirmacao == "S":
+            heroi['Classe'] = classe['Classe1']
+            condicaoClasse = False
+        else:                                                               
+            if confirmacao == "N": # coloquei isso aqui porque caso colocasse apenas que fosse diferente do "S" eu não iria saber se o usuário digitou "N" ou algo aleatório
+                continue
+            else:
+                print("Por favor, digite apenas 'S' ou 'N'") # aí por isso eu coloquei esse outro else, porque caso não for de fato o "N" e for coisas aleatórias, eu posso dar uma bronca no usuário e ele saber o que é para colocar mesmo ;)
+                print()
+                continue
+      
+    if classeOp == 2:
+        print(f"Voce seleciounou a classe {classe['Classe2']}") 
+        confirmacao = str.upper(input("Digite 'S' para sim ou 'N' para não\nDeseja confirmar?: "))  
+        if confirmacao == "S":
+            heroi['Classe'] = classe['Classe2']
+            condicaoClasse = False
+        else:                                                               
+            if confirmacao == "N": 
+                continue
+            else:
+                print("Por favor, digite apenas 'S' ou 'N'") 
+                print()
+                continue
 
-  if classeOp == 3:
-    print(f"Voce seleciounou a classe {classe['Classe3']}") #LOGICA ERRADA
-    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
-    if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
-      heroi['Classe'] = classe['Classe3'] 
-      condicaoClasse = False
-    else:
-      continue
+    if classeOp == 3:
+        print(f"Voce seleciounou a classe {classe['Classe3']}") 
+        confirmacao = str.upper(input("Digite 'S' para sim ou 'N' para não\nDeseja confirmar?: "))  
+        if confirmacao == "S":
+            heroi['Classe'] = classe['Classe3']
+            condicaoClasse = False
+        else:                                                               
+            if confirmacao == "N": 
+                continue
+            else:
+                print("Por favor, digite apenas 'S' ou 'N'") 
+                print()
+                continue
 
-print(heroi.items()) #TESTE
+print(heroi) #TEST
