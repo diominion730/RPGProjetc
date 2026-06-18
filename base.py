@@ -39,18 +39,18 @@ f"3- {(classe['Classe3']['Nome'])} \n"
  )
   
   classeOp = int(input("Qual sera a classe do seu heroi:"))
+  classeEscolhida = classe[f'Classe{classeOp}']
     
   if classeOp == 1:
-    #Vinicius: Arrumei a linha de baixo pq nao estava dando pra testar o resto do código
-    print(f"Voce selecionou a classe {classe['Classe1']['Nome']}") #ERRO
-    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas 
+    print(f"Voce selecionou a classe {classeEscolhida['Nome']}") #Mudança para evitar repetição
+    confirmacao = input("\nDeseja confirmar? S/N") #Permitir letras maiusculas e minusculas(precisa)
     if confirmacao == "S" or confirmacao == "s" or confirmacao == "sim" or confirmacao == "Sim":
       #Vinicius: Atribuindo status diretamento ao dic "heroi"
-      heroi['Classe'] = classe['Classe1']['Nome']
-      heroi['Força'] = classe['Classe1']['Força']
-      heroi['Defesa'] = classe['Classe1']['Defesa']
-      heroi['Vida'] = classe['Classe1']['Vida']
-      heroi['Mana'] = classe['Classe1']['Mana']
+      heroi['Classe'] = classeEscolhida['Nome']
+      heroi['Força'] = classeEscolhida['Força']
+      heroi['Defesa'] = classeEscolhida['Defesa']
+      heroi['Vida'] = classeEscolhida['Vida']
+      heroi['Mana'] = classeEscolhida['Mana']
 
       condicaoClasse = False
     else:
