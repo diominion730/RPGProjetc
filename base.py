@@ -9,32 +9,34 @@ heroi['inventario'] = {  #Cria uma chave inventario, dentro dessa chave tera out
   'items': []
 } 
 
-classe = {
-  "Classe1": {
-      'Nome': 'Guerreiro', 
-      "Força": 18,
-      "Defesa": 16,
-      "Vida": 150,
-      "Mana": 30,
-      "Vida": 150  #Adicionei vida
-    },
-  "Classe2":{
-      'Nome': 'Mago',
-      "Força": 6,
-      "Defesa": 8,
-      "Vida": 80,
-      "Mana": 180,
-      "Vida": 80 #Adicionei vida
-        },
-    "Classe3":{
-      "Nome": "Arqueiro",
-      "Força": 12,
-      "Defesa": 10,
-      "Vida": 100,
-      "Mana": 60,
-      "Vida": 100, #Adicionei vida
-      "arma inicial": "Cajado Quebrado"
-          }} 
+inimigo = {
+  
+}
+"Uma lista, e cada elemento da lista é um dicionario"
+classe = [
+  {
+  "Nome": "Guerreiro",
+  "Força": 18,
+  "Defesa": 16,
+  "Vida": 150,
+  "Mana": 30
+  },
+  {
+  "Nome": "Mago",
+  "Força": 6,
+  "Defesa": 6,
+  "Vida": 80,
+  "Mana": 180,
+  },
+  {
+  "Nome": "Arqueiro",
+  "Força": 12,
+  "Defesa": 10,
+  "Vida": 100, 
+  "Mana": 60,
+  "arma inicial": "Cajado Quebrado"
+  }
+]
 
 nome_heroi = str(input("Qual o nome do seu heroi?"))
 heroi['Nome'] = nome_heroi 
@@ -42,27 +44,26 @@ heroi['Nome'] = nome_heroi
 condicaoClasse = True
 while condicaoClasse:
   print(
-  "Selecione sua classe:\n"
-  f"1- {(classe['Classe1']['Nome'])} \n"
-  f"2- {(classe['Classe2']['Nome'])} \n"
-  f"3- {(classe['Classe3']['Nome'])} \n"
+  "\nSelecione sua classe:\n"
+  f"1- {classe[0]['Nome']} \n"
+  f"2- {classe[1]['Nome']} \n"
+  f"3- {classe[2]['Nome']} \n"
   )
   try:
     classeOp = int(input("Qual sera a classe do seu heroi:"))
-    classeEscolhida = classe[f'Classe{classeOp}']
   except:
     print("Por favor, digite apenas as classes listadas!!!")
     
-  print(f"Voce selecionou a classe {classeEscolhida['Nome']}") 
+  print(f"Voce selecionou a classe {classe[classeOp - 1]['Nome']}") 
   confirmacao = str.upper(input("\nDeseja confirmar? S/N")) 
   if confirmacao == "S":
     #Vinicius: Atribuindo status diretamento ao dic "heroi"
-    heroi['Classe'] = classeEscolhida['Nome']
-    heroi['Força'] = classeEscolhida['Força']
-    heroi['Defesa'] = classeEscolhida['Defesa']
-    heroi['Vida'] = classeEscolhida['Vida']
-    heroi['Mana'] = classeEscolhida['Mana']
-    heroi['Vida'] = classeEscolhida['Vida']
+    heroi['Classe'] = classe[classeOp - 1]['Nome']
+    heroi['Força'] = classe[classeOp - 1]['Força']
+    heroi['Defesa'] = classe[classeOp - 1]['Defesa']
+    heroi['Vida'] = classe[classeOp - 1]['Vida']
+    heroi['Mana'] = classe[classeOp - 1]['Mana']
+    heroi['Vida'] = classe[classeOp - 1]['Vida']
 
     condicaoClasse = False
 
@@ -72,10 +73,10 @@ while condicaoClasse:
     else:
       print("Por favor, digite apenas 'S' ou 'N'")
 
-heroi['inventario']['armas'].append(classeEscolhida['arma inicial']) #O código acessa o dicionário heroi, entra na chave inventario, depois acessa a chave armas dentro desse inventário e usa o método append() para adicionar a arma inicial da classe escolhida nessa lista.S
-print(f"Parabéns!! Como presente de boas vindas voce ganhou um {classeEscolhida['arma inicial']}!")
-verStatus = str.upper(input(f"Deseja ver os stats do item: {classeEscolhida['arma inicial']}? S/N"))
-if verStatus == "S":
+heroi['inventario']['armas'].append(classe[classeOp - 1]['arma inicial']) #O código acessa o dicionário heroi, entra na chave inventario, depois acessa a chave armas dentro desse inventário e usa o método append() para adicionar a arma inicial da classe escolhida nessa lista.S
+print(f"Parabéns!! Como presente de boas vindas voce ganhou um {classe[classeOp - 1]['arma inicial']}!")
+verStatus = str.upper(input(f"Deseja ver os stats do item: {classe[classeOp - 1]['arma inicial']}? S/N"))
+if verStatus == "S":  #pode quebrar aqui
   print("stats") #Precisa ser criado de algum jeito ai!
 
 #1- Ideia em ordem sequencial com nivel se dificuldade na minha visão
