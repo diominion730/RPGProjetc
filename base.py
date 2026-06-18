@@ -88,7 +88,7 @@ f"3- {(classe['Classe3']['Nome'])} \n"
 
 print(heroi.items())
 
-
+""
 #print("----MENU PRINCIPAL-----" \ IDEIA DE MENU SIMPLES
 #"1- Ver status" \
 #"2- Inventario" \
