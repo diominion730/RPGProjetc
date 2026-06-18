@@ -1,4 +1,5 @@
-heroi = {}
+#Chaves e valores iniciais obrigatorios
+heroi = {'Nivel': 0, 'Xp': 0}
 classe = {
     "Classe1": {
         'Nome': 'Guerreiro', 
