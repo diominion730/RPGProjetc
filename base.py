@@ -79,7 +79,7 @@ print(f"Parabéns!! Como presente de boas vindas voce ganhou um {classe[classeOp
 verStatus = str.upper(input(f"Deseja ver os stats do item: {classe[classeOp - 1]['arma inicial']}? S/N"))
 if verStatus == "S":  #pode quebrar aqui
 
-status = {}"Armas": {"Cajado Quebrado": {"Dano": 28}}, "Items": {}}
+##status = {}"Armas": {"Cajado Quebrado": {"Dano": 28}}, "Items": {}}
 
 #1- Ideia em ordem sequencial com nivel se dificuldade na minha visão
 #2- Arma inicial para outras classes (facil)
