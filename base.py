@@ -77,7 +77,7 @@ while condicaoClasse:
 heroi['inventario']['armas'].append(classe[classeOp - 1]['arma inicial']) #O código acessa o dicionário heroi, entra na chave inventario, depois acessa a chave armas dentro desse inventário e usa o método append() para adicionar a arma inicial da classe escolhida nessa lista.S
 print(f"Parabéns!! Como presente de boas vindas voce ganhou um {classe[classeOp - 1]['arma inicial']}!")
 verStatus = str.upper(input(f"Deseja ver os stats do item: {classe[classeOp - 1]['arma inicial']}? S/N"))
-if verStatus == "S":  #pode quebrar aqui
+#if verStatus == "S":  #pode quebrar aqui
 
 ##status = {}"Armas": {"Cajado Quebrado": {"Dano": 28}}, "Items": {}}
 
